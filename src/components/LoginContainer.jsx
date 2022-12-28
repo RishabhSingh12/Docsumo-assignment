@@ -1,7 +1,8 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router";
 import "./LoginContainer.css";
 
-const LoginContainer = () => {
+const LoginContainer = ({ loggedUser, setloggedUser }) => {
   const [email, setEmail] = useState("");
   const [invalidemail, setInvalidEmail] = useState(false);
   const [password, setPassword] = useState("");
@@ -9,6 +10,8 @@ const LoginContainer = () => {
   const [message, setMessage] = useState("");
   const [display, setDisplay] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
+
+  const navigate = useNavigate();
 
   const emailHandler = (e) => {
     setEmail(e.target.value);
@@ -59,8 +62,10 @@ const LoginContainer = () => {
         let data = await res.json();
         console.log(data);
         if (res.status === 200) {
+          setloggedUser({ ...loggedUser, email: email });
           setEmail("");
           setPassword("");
+          navigate("/login");
         }
       } catch (err) {
         setEmail("");

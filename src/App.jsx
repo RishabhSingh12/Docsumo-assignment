@@ -1,9 +1,13 @@
 import { useState } from "react";
+import { Routes, Route } from "react-router";
 
 import "./App.css";
 import LoginContainer from "./components/LoginContainer";
+import Welcome from "./pages/Welcome";
 
 function App() {
+  const [loggedUser, setloggedUser] = useState({ email: "" });
+
   return (
     <div className="container">
       <div className="logo-container">
@@ -12,7 +16,13 @@ function App() {
         </a>
       </div>
       <div className="page-container">
-        <LoginContainer />
+        <LoginContainer loggedUser={loggedUser} setloggedUser={setloggedUser} />
+        <Routes>
+          <Route
+            to="/profile"
+            element={<Welcome loggedUser={loggedUser} />}
+          ></Route>
+        </Routes>
       </div>
     </div>
   );
