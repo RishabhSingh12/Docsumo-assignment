@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Routes, Route } from "react-router";
+import logoimage from "./assets/docsumologo.png";
 
 import "./App.css";
 import LoginContainer from "./components/LoginContainer";
@@ -12,11 +13,7 @@ function App() {
     <div className="container">
       <div className="logo-container">
         <a href="#">
-          <img
-            className="logo-image"
-            src="./src/assets/docsumologo.png"
-            alt="logo"
-          />
+          <img className="logo-image" src={logoimage} alt="logo" />
         </a>
       </div>
       <div className="page-container">
