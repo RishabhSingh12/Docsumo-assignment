@@ -22,7 +22,7 @@ The task also had different requirements and check to create the login page logi
 
 &nbsp;
 
-# Live preview of the app -> [Live preview](https://fabrik1.netlify.app)
+# Live preview of the app -> [Live preview](https://dsumo-assignment.netlify.app)
 
 &nbsp;
 
