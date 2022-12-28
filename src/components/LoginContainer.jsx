@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import "./LoginContainer.css";
+import Spinner from "react-bootstrap/Spinner";
 
 const LoginContainer = ({ loggedUser, setloggedUser }) => {
   const [email, setEmail] = useState("");
@@ -10,6 +11,7 @@ const LoginContainer = ({ loggedUser, setloggedUser }) => {
   const [message, setMessage] = useState("");
   const [display, setDisplay] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
 
@@ -33,8 +35,9 @@ const LoginContainer = ({ loggedUser, setloggedUser }) => {
 
   const submitHandler = async (e) => {
     e.preventDefault();
-    console.log(e);
+    // console.log(e);
     console.log(email, password);
+    setLoading(true);
 
     if (email === "" || password === "") {
       setInvalidEmail(true);
@@ -61,17 +64,23 @@ const LoginContainer = ({ loggedUser, setloggedUser }) => {
 
         let data = await res.json();
         console.log(data);
+
+        res.status = 200;
+
         if (res.status === 200) {
           setloggedUser({ ...loggedUser, email: email });
           setEmail("");
           setPassword("");
           navigate("/login");
+          setLoading(false);
         }
       } catch (err) {
         setEmail("");
         setPassword("");
         setDisplay(true);
         setMessage("User doesn't exist!");
+        setTimeout(() => setLoading(false), 1000);
+
         console.log(err);
       }
     }
@@ -130,7 +139,10 @@ const LoginContainer = ({ loggedUser, setloggedUser }) => {
           </div>
         </div>
 
-        <button className="button login">Login</button>
+        <button className="button login">
+          {loading ? <Spinner animation="border" variant="dark" /> : ""}
+          Login
+        </button>
         <span></span>
       </form>
     </div>

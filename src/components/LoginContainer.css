@@ -130,6 +130,10 @@ input {
   outline: none;
   color: white;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
 }
 
 .button:hover {

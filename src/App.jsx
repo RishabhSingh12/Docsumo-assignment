@@ -19,7 +19,7 @@ function App() {
         <LoginContainer loggedUser={loggedUser} setloggedUser={setloggedUser} />
         <Routes>
           <Route
-            to="/profile"
+            to="/login"
             element={<Welcome loggedUser={loggedUser} />}
           ></Route>
         </Routes>
