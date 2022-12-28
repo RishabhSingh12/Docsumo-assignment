@@ -12,7 +12,11 @@ function App() {
     <div className="container">
       <div className="logo-container">
         <a href="#">
-          <img className="logo-image" src="./src/assets/logo.png" alt="logo" />
+          <img
+            className="logo-image"
+            src="./src/assets/docsumologo.png"
+            alt="logo"
+          />
         </a>
       </div>
       <div className="page-container">
