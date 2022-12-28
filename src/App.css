@@ -1,0 +1,49 @@
+.container {
+  height: 100vh;
+  padding: 30px 60px;
+  background: url("./assets/bg-main.png") no-repeat 100% 100%;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.page-container {
+  /* position: relative; */
+  margin-top: 2.3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-image {
+  width: 165px;
+}
+
+@media screen and (min-width: 1440px) {
+  .container {
+    padding: 65px 120px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .container {
+    padding: 30px 40px;
+  }
+
+  .logo-image {
+    margin-top: 3rem;
+  }
+
+  .page-container {
+    margin-top: 3rem;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .page-container {
+    margin-top: 2rem;
+  }
+
+  .logo-image {
+    margin-top: 1rem;
+  }
+}
