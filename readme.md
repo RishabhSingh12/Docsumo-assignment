@@ -30,15 +30,15 @@ The task also had different requirements and check to create the login page logi
 
 ## Large screen view -
 
-![Large-width screen view](markdown_assets/desktop-view.png)
+![Large-width screen view](./markdown_assets/desktop-view.png)
 
 ## Medium screen view -
 
-![Meduim-width screen view](markdown_assets/medium-view.png)
+![Meduim-width screen view](./markdown_assets/medium-view.png)
 
 ## Small-width screen view -
 
-![Small-width screen view](markdown_assets/mobile-view.png)
+![Small-width screen view](./markdown_assets/mobile-view.png)
 
 &nbsp;
 
