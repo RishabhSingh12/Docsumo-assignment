@@ -35,6 +35,7 @@ const LoginContainer = ({ loggedUser, setloggedUser }) => {
 
   const submitHandler = async (e) => {
     e.preventDefault();
+    e.target.style.opacity = "0.8";
     // console.log(e);
     console.log(email, password);
     setLoading(true);
@@ -79,8 +80,8 @@ const LoginContainer = ({ loggedUser, setloggedUser }) => {
         setPassword("");
         setDisplay(true);
         setMessage("User doesn't exist!");
-        setTimeout(() => setLoading(false), 1000);
-
+        setLoading(false);
+        e.target.style.opacity = "1";
         console.log(err);
       }
     }
@@ -140,7 +141,11 @@ const LoginContainer = ({ loggedUser, setloggedUser }) => {
         </div>
 
         <button className="button login">
-          {loading ? <Spinner animation="border" variant="dark" /> : ""}
+          {loading ? (
+            <Spinner size="sm" animation="border" variant="dark" />
+          ) : (
+            ""
+          )}
           Login
         </button>
         <span></span>
